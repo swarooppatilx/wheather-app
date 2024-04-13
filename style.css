@@ -1,16 +1,18 @@
 /* style.css */
 
-body {
-    font-family: Arial, sans-serif;
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.card-header {
     text-align: center;
 }
 
-input[type="text"], button {
-    margin: 10px;
-    padding: 5px;
-    font-size: 16px;
+#weatherInfo {
+    text-align: center;
 }
 
-#weatherInfo {
-    margin-top: 20px;
+#weatherInfo p {
+    margin-bottom: 0.5rem;
 }
