@@ -1,12 +1,16 @@
 function getWeather() {
     const pincode = document.getElementById('pincodeInput').value;
     const apiKey = '513ac8debfc21bad0d5e19eb15a4c8c3';
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${pincode}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},in&appid=${apiKey}&units=metric`;
 
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to fetch weather data. Please try again.');
+                if (response.status === 404) {
+                    throw new Error('City not found. Please enter a valid pincode.');
+                } else {
+                    throw new Error('Failed to fetch weather data. Please try again.');
+                }
             }
             return response.json();
         })
