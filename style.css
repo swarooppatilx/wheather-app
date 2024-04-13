@@ -1,5 +1,9 @@
 /* style.css */
 
+#error {
+    display: none; /* Hide the error alert box initially */
+}
+
 .card {
     max-width: 400px;
     margin: 0 auto;
