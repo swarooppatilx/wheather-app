@@ -25,10 +25,14 @@ function getWeather() {
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
             document.getElementById('pressure').textContent = `Pressure: ${pressure} hPa`;
 
-            document.getElementById('error').textContent = ''; // Clear any previous error messages
+            const errorAlert = document.getElementById('error');
+            errorAlert.textContent = ''; // Clear any previous error messages
+            errorAlert.style.display = 'none'; // Hide the error alert box
         })
         .catch(error => {
-            document.getElementById('error').textContent = error.message;
+            const errorAlert = document.getElementById('error');
+            errorAlert.textContent = error.message;
+            errorAlert.style.display = error.message ? 'block' : 'none'; // Show the error alert box only if there is an error message
             console.error('Error:', error);
         });
 }
