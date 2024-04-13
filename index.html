@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Weather Information</h1>
-    <input type="text" id="pincodeInput" placeholder="Enter Pincode">
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weatherInfo">
-        <p>Temperature: <span id="temperature"></span></p>
-        <p>Humidity: <span id="humidity"></span></p>
-        <p>Moisture: <span id="moisture"></span></p>
+    <div class="container mt-5">
+        <div class="card">
+            <h5 class="card-header bg-primary text-white">Weather Information</h5>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="pincodeInput">Enter Pincode:</label>
+                    <input type="text" id="pincodeInput" class="form-control" placeholder="Enter Pincode">
+                </div>
+                <button onclick="getWeather()" class="btn btn-primary">Get Weather</button>
+                <div id="weatherInfo" class="mt-4">
+                    <p id="cityName"></p>
+                    <p id="temperature"></p>
+                    <p id="humidity"></p>
+                    <p id="pressure"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
