@@ -1,7 +1,7 @@
 function getWeather() {
     const pincode = document.getElementById('pincodeInput').value;
     const apiKey = '513ac8debfc21bad0d5e19eb15a4c8c3';
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${pincode}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},in&appid=${apiKey}&units=metric`;
 
     fetch(url)
         .then(response => response.json())
